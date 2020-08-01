@@ -1,2 +1,3 @@
-# Quizzer
-A fun quiz app for all
+<p align=center>
+<img src="./assets/ReadmeHeader.png"/>
+</p>
