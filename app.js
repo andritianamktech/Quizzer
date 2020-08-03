@@ -9,6 +9,9 @@ app.use(express.raw())
 
 app.use(express.static(path.join(__dirname, 'client', 'build')))
 
+// routes
+const router = require('./routes')
+app.use('/api', router)
 
 // client handling
 app.get('*',(req,res) => {
