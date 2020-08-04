@@ -1,4 +1,7 @@
 const router = require('express').Router()
+const {
+    createAQuiz
+} = require('../controller/quizzes')
 
 router.route('/')
 
@@ -10,7 +13,7 @@ router.route('/quiz')
     * options: array of strings not more than 4
     * answer: index of correct answer
     * */
-    .post()
+    .post(createAQuiz)
 
 router.route('/worksheet')
     /*
