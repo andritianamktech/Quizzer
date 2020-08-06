@@ -30,7 +30,7 @@ passport.use(new LocalStrategy({
 
 passport.use(new JWTStrategy({
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey: process.env.JWT_SECRET
+    secretOrKey: process.env.JWT_TOKEN
 }, async (jwtPayload, cb) => {
     try {
         const user = await User.findOne({ _id: jwtPayload.id })

@@ -1,9 +1,10 @@
 const router = require('express').Router()
 const jwt = require('jsonwebtoken')
 const User = require('../model/users')
+const passport = require('passport')
 
-router.route('./login')
-    .post(async (req, res) => {
+router.route('/login')
+    .post(passport.authenticate('local',{session: false}),async (req, res) => {
         let user = req.user
 
         try {
@@ -14,9 +15,11 @@ router.route('./login')
         }
     })
 
-router.route('./signup')
+router.route('/signup')
     .post(async (req, res) => {
         const {username, password} = req.body
+
+        console.log(username, password)
 
         try {
             const user = await User.findOne({username: username})
@@ -32,10 +35,11 @@ router.route('./signup')
 
             const response = await newUser.save()
 
-            const token = jwt.sign({id: response._id}, process.env.JWT_SECRET)
+            const token = jwt.sign({id: response._id}, process.env.JWT_TOKEN)
 
             return res.status(201).json({token, username: response.username})
         } catch (e) {
+            console.log(e)
             return res.status(404).json(e)
         }
     })
