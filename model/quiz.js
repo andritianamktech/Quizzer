@@ -22,4 +22,7 @@ const quizSchema = new mongoose.Schema({
 
 const Quiz = mongoose.model('quiz', quizSchema)
 
-module.exports = Quiz
+module.exports = {
+    Quiz,
+    quizSchema
+}

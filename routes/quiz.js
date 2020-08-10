@@ -1,7 +1,7 @@
 const router = require('express').Router()
-const Quiz = require('../model/quiz')
+const {Quiz} = require('../model/quiz')
 const passport = require('passport')
-const Worksheet = require('../model/worksheet')
+const {Worksheet} = require('../model/worksheet')
 
 router.route('/')
 
