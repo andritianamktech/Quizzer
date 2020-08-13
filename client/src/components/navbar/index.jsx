@@ -4,17 +4,33 @@ import {
     makeStyles,
     AppBar,
     Toolbar,
-    Typography
+    Typography,
+    Button
 } from '@material-ui/core'
 
+const useStyle = makeStyles(theme => ({
+    root: {
+        flexGrow: 1
+    },
+    title: {
+        flexGrow: 1
+    }
+}))
+
 const Navbar = props => {
+    const classes = useStyle()
+
     return (
-        <div>
+        <div className={classes.root}>
             <AppBar color={"transparent"} position={"static"} elevation={0}>
                 <Toolbar>
-                    <Typography>
+                    <Typography className={classes.title}>
                         Quizzer
                     </Typography>
+
+                    <Button>
+                        Join
+                    </Button>
                 </Toolbar>
             </AppBar>
         </div>
