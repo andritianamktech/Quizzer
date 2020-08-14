@@ -1,7 +1,7 @@
 const router = require('express').Router()
-const {Quiz} = require('../model/quiz')
+const { Quiz } = require('../model/quiz')
 const passport = require('passport')
-const {Worksheet} = require('../model/worksheet')
+const { Worksheet } = require('../model/worksheet')
 
 router.route('/')
 
@@ -53,6 +53,23 @@ router.route('/worksheet')
 
         } catch (error) {
             return res.status(404).send(error)
+        }
+    })
+
+router.route('/worksheet/:id')
+    .get(async (req, res) => {
+        let { id } = req.params
+
+        try {
+            let workSheet = Worksheet.findById(id)
+
+            if (!workSheet) {
+                return res.status(401).send("worksheet not available")
+            }
+
+            return res.status(200).json(workSheet)
+        } catch (error) {
+            return res.status(404).json
         }
     })
 
