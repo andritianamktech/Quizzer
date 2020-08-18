@@ -11,6 +11,22 @@ It also helps you to manage and perform various operations in the quiz, such as 
 </tr>
 </table>
 </p>
+
+---
+## Getting Sarted
+This project is built on **MERN** stack, to setup local enviroment follow these steps:
+
+- clone the repo 
+- get inside the repo using `cd Quizzer`
+- install the dependencies `npm i`, this will install the dependency for the nodejs enviorment 
+- get inside the client folder `cd client` 
+- to install the react dependencies run command `npm i`
+
+- to run the nodejs dev server run `npm run dev-server`
+- to run the react dev server run `npm run dev-client`
+
+---
+
 <b>Update</b><br>
 We will be launching soon our Quizzer API where developers can create their custom experiences for user based on requirements.
 
