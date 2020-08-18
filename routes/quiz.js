@@ -1,16 +1,20 @@
-const quizController = require('../controller/quiz');
 const router = require('express').Router();
 const passport = require('passport');
+const {
+    createQuiz,
+    createWorksheet,
+    fetchWorksheet
+} = require('../controller/quiz')
 
 // Create single quiz route.
 router.route('/quiz')
-    .post(async (req, res) => await quizController.createQuiz(req, res));
+    .post(createQuiz);
 
 // Create single worksheet route.
 router.route('/worksheet')
-    .post(passport.authenticate('jwt'), async (req, res) => await quizController.createWorksheet(req, res));
+    .post(passport.authenticate('jwt'), createWorksheet);
 
 router.route('/worksheet/:id')
-    .get(async (req, res) => await quizController.fetchWorksheet(req, res));
+    .get(fetchWorksheet);
 
 module.exports = router;
