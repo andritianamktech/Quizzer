@@ -1,13 +1,16 @@
-const authController = require('../controller/auth');
 const router = require('express').Router()
 const passport = require('passport')
+const {
+    login,
+    signup
+} = require('../controller/auth')
 
 // Login route
 router.route('/login')
-    .post(passport.authenticate('local',{session: false}), async (req, res) => await authController.userLogin(req, res));
+    .post(passport.authenticate('local', { session: false }), login);
 
 // Signup route
 router.route('/signup')
-    .post(async (req, res) => await authController.userSignUp(req, res));
+    .post(signup);
 
 module.exports = router
