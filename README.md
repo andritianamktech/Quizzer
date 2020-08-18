@@ -13,7 +13,7 @@ It also helps you to manage and perform various operations in the quiz, such as 
 </p>
 
 ---
-## Getting Sarted
+## Getting Sarted 🎉
 This project is built on **MERN** stack, to setup local enviroment follow these steps:
 
 - clone the repo 
@@ -27,7 +27,7 @@ This project is built on **MERN** stack, to setup local enviroment follow these 
 
 ---
 
-<b>Update</b><br>
+## Update
 We will be launching soon our Quizzer API where developers can create their custom experiences for user based on requirements.
 
 ### Models
